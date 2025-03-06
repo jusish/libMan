@@ -74,12 +74,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarContent>
       <SidebarRail />
       <SidebarFooter className="my-10">
-        <div className="flex gap-2 my-10 mx-2">
+        {/* <div className="flex gap-2 my-10 mx-2">
           <a href="#" className="flex items-center gap-2 font-medium">
             Darkmode
             <ModeToggle/>
           </a>
-        </div>
+        </div> */}
         <SidebarMenuButton className="flex gap-2">
           <a href="#" className="flex items-center gap-2 font-medium">
             <LogOutIcon className="size-4" />

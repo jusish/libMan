@@ -1,4 +1,5 @@
 import { AppSidebar } from "@/components/app-sidebar"
+import { ModeToggle } from "@/components/mode-toggle"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -33,6 +34,8 @@ export default function Page() {
                 
               </BreadcrumbList>
             </Breadcrumb>
+            <Separator orientation="vertical" className="mr-2 h-4"/>
+            <ModeToggle/>
           </div>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4">
