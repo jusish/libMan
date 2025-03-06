@@ -1,6 +1,6 @@
 // app/components/auth/login.tsx
 import { SignupForm } from "@/components/auth/signup-form";
-import { GalleryVerticalEnd } from "lucide-react"
+import { GalleryVerticalEnd, SeparatorHorizontal, SeparatorVertical } from "lucide-react"
 
 export const Signup = () => {
     return (

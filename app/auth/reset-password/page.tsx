@@ -1,9 +1,8 @@
 "use client";
 
-export default function SignupPage() {
-  return (
-    <div>
-      <h1>Reset password</h1>
-    </div>
-  );
+import { PasswordReset } from "./reset-password";
+export default function ResetPassword() {
+    return (
+        <PasswordReset />
+    );
 }
