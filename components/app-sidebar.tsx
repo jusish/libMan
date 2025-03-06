@@ -20,11 +20,8 @@ import { ModeToggle } from "./mode-toggle";
 // Sample data
 const data = {
   navMain: [
-    { title: "Dashboard", url: "#" },
-    { title: "Books", url: "#" },
-    { title: "API Reference", url: "#" },
-    { title: "Architecture", url: "#" },
-    { title: "Community", url: "#" },
+    { title: "Dashboard", url: "/dashboard" },
+    { title: "Books", url: "/books" },
   ],
 };
 
