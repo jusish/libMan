@@ -8,6 +8,7 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
   SidebarInset,
@@ -15,7 +16,20 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Metadata } from "next";
+
+import DashboardTable from "@/components/data-table";
+import HeaderCard from "@/components/card";
+
+import { UserIcon } from "lucide-react";
+import { DollarSignIcon } from "lucide-react";
+import { ShoppingCartIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "libMan | Dashboard",
@@ -44,18 +58,57 @@ export default function Page() {
             <Separator orientation="vertical" className="mr-2 h-4" />
             <ModeToggle />
           </div>
-          <Avatar className="mx-6">
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Avatar className="mx-10">
+                <AvatarImage
+                  src="https://github.com/shadcn.png"
+                  alt="@shadcn"
+                />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem>
+                <a href="#">Profile</a>
+              </DropdownMenuItem>
+
+              <DropdownMenuItem>
+                <a href="#">Settings</a>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4">
-          <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-            <div className="bg-muted/50 aspect-video rounded-xl" />
-            <div className="bg-muted/50 aspect-video rounded-xl" />
-            <div className="bg-muted/50 aspect-video rounded-xl" />
+          <div className="grid auto-rows-min gap-4 grid-rows-1 lg:grid-cols-5 md:grid-rows-1">
+            <div className="bg-muted/50 aspect-video rounded-xl">
+              <HeaderCard
+                title="Users"
+                value="12,345"
+                icon={<UserIcon className="w-8 h-8 text-blue-700" />} // Pass as JSX
+                color="blue"
+              />
+            </div>
+            <div className="bg-muted/50 aspect-video rounded-xl">
+              <HeaderCard
+                title="Revenue"
+                value="$45,678"
+                icon={<DollarSignIcon className="w-8 h-8 text-green-700" />}
+                color="green"
+              />
+            </div>
+            <div className="bg-muted/50 aspect-video rounded-xl">
+              <HeaderCard
+                title="Orders"
+                value="1,234"
+                icon={<ShoppingCartIcon className="w-8 h-8 text-purple-700" />}
+                color="purple"
+              />
+            </div>
           </div>
-          <div className="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min" />
+          <div className="bg-muted/50 flex-1 rounded-xl p-6">
+            <DashboardTable />
+          </div>
         </div>
       </SidebarInset>
     </SidebarProvider>
